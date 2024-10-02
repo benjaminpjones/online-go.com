@@ -89,4 +89,4 @@ export function toast(element: React.ReactElement<any>, timeout: number = 0): To
     return ret;
 }
 
-window.toast = toast;
+(window as any)["toast"] = toast;

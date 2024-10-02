@@ -340,7 +340,7 @@ class _Joseki extends React.Component<JosekiProps, JosekiState> {
         this.goban = createGoban(opts);
         this.goban.setMode("puzzle");
         this.goban.on("update", () => this.onBoardUpdate());
-        window.global_goban = this.goban;
+        (window as any)["global_goban"] = this.goban;
     };
 
     componentDidMount = () => {

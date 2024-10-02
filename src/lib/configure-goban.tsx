@@ -26,8 +26,8 @@ import { Goban, GobanBase, GobanEngine, setGobanRenderer } from "goban";
 import { sfx } from "@/lib/sfx";
 import { toast } from "@/lib/toast";
 
-window.GobanThemes = Goban.THEMES;
-window.GobanEngine = GobanEngine;
+(window as any)["GobanThemes"] = Goban.THEMES;
+(window as any)["GobanEngine"] = GobanEngine;
 
 let previous_toast: any = null;
 

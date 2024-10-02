@@ -97,7 +97,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, any> {
     }
 }
 
-window.test_sentry = () => {
+(window as any)["test_sentry"] = () => {
     try {
         throw new Error("SENTRY TEST");
     } catch (e) {
