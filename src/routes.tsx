@@ -35,6 +35,7 @@ import { Admin, MerchantLog, FlaggedGames, OnlineLeaguesAdmin } from "@/views/Ad
 import { ChatView } from "@/views/ChatView";
 import { Developer } from "@/views/Developer";
 import { Game } from "@/views/Game";
+import { DualGame } from "@/views/DualGame";
 import { GameEmbed } from "@/views/GameEmbed";
 import { Joseki } from "@/views/Joseki";
 import { Group } from "@/views/Group";
@@ -247,6 +248,8 @@ export const routes = (
                 <Route path="/game/view/:game_id" element={<Game />} />
                 <Route path="/game/:game_id/:move_number" element={<Game />} />
                 <Route path="/game/:game_id" element={<Game />} />
+                <Route path="/dual-game/:game_id_1/:game_id_2" element={<DualGame />} />
+                <Route path="/dual-review/:review_id_1/:review_id_2" element={<DualGame />} />
                 <Route path="/review/view/:review_id" element={<Game />} />
                 <Route path="/review/:review_id/:move_number" element={<Game />} />
                 <Route path="/review/:review_id" element={<Game />} />

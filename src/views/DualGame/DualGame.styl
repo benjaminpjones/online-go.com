@@ -1,0 +1,133 @@
+/*
+ * Dual Game View Styles
+ */
+
+.DualGame {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color, #f5f5f5);
+}
+
+.dual-game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--header-background, #fff);
+    border-bottom: 1px solid var(--border-color, #ddd);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dual-game-header h1 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color, #333);
+    font-size: 1.5rem;
+}
+
+.dual-game-header p {
+    margin: 0;
+    color: var(--text-muted, #666);
+    font-size: 0.9rem;
+}
+
+.dual-game-container {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.simple-goban {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--game-background, #fff);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.simple-goban-title {
+    padding: 1rem;
+    background: var(--game-header-background, #f8f9fa);
+    border-bottom: 1px solid var(--border-color, #ddd);
+    font-weight: 600;
+    color: var(--text-color, #333);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.simple-goban-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    min-height: 400px;
+}
+
+.simple-goban-error {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--error-background, #ffe6e6);
+    border: 1px solid var(--error-border, #ffb3b3);
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.simple-goban-error p {
+    color: var(--error-color, #dc3545);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Error state styles */
+.DualGame.error {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.DualGame.error h1 {
+    color: var(--error-color, #dc3545);
+    margin-bottom: 1rem;
+}
+
+.DualGame.error p {
+    color: var(--text-muted, #666);
+    margin: 0.5rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .dual-game-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .simple-goban {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .dual-game-header {
+        padding: 0.5rem 1rem;
+    }
+    
+    .dual-game-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .dual-game-container {
+        padding: 0.5rem;
+    }
+    
+    .simple-goban-container {
+        min-height: 300px;
+    }
+}
