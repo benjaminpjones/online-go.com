@@ -24,7 +24,6 @@ import { gameLogThumbnailMarksTest } from "./game-log-thumbnail-marks";
 import { gameLogScoringAreasTest } from "./game-log-scoring-areas";
 import { sgfDownloadRestrictionsTest } from "./sgf-download-restrictions";
 import { multiMoveUndoTest, multiMoveUndoWhiteRequesterTest } from "./multi-move-undo";
-import { gameChatMultilineInputTest } from "./game-chat-multiline-input";
 
 ogsTest.describe("@Games Tests", () => {
     ogsTest("Pass and score a game", basicScoringTest);
@@ -42,5 +41,4 @@ ogsTest.describe("@Games Tests", () => {
         "Undo on white requester's turn covers the last two moves",
         multiMoveUndoWhiteRequesterTest,
     );
-    ogsTest("Chat input controls track a multi-line composer", gameChatMultilineInputTest);
 });

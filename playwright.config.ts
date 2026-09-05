@@ -67,7 +67,9 @@ export default defineConfig({
     globalTeardown: process.env.PW_UI ? undefined : "./e2e-tests/global-teardown.ts",
     testDir: "./e2e-tests",
     testMatch: process.env.CI ? ["smoketests.spec.ts"] : ["**/*.spec.ts"],
-    testIgnore: process.env.CI ? [] : ["**/smoke/**"],
+    // Harness tests need no backend and have their own config,
+    // playwright.harness.config.ts.
+    testIgnore: process.env.CI ? ["**/harness/**"] : ["**/smoke/**", "**/harness/**"],
     // If you change this you need to change report-utils to match, noting the delta there from here.
     timeout: 180 * 1000, // 3 minutes - longest regular test is ~108s; @Slow tests override with test.setTimeout()
     expect: {

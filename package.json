@@ -11,6 +11,7 @@
     "scripts": {
         "dev": "vite",
         "vite": "vite",
+        "harness": "vite --config vite.harness.config.ts",
         "build": "vite build --emptyOutDir",
         "build-ci": "vite build --emptyOutDir",
         "build:i18n": "OGS_I18N_BUILD_MODE=true vite build",
@@ -26,6 +27,7 @@
         "test": "jest",
         "fresh-test": "clear && jest",
         "test:e2e": "node scripts/run-playwright.js",
+        "test:harness": "playwright test --config playwright.harness.config.ts",
         "test:e2e:quick": "node scripts/run-playwright.js --grep-invert \"@Smoke|@Slow|@Visual|@E2EUtils|@Manual\"",
         "test:e2e:smoke": "yarn test:e2e:docker:smoke",
         "test:e2e:ui": "PW_UI=true node scripts/run-playwright.js --ui",
